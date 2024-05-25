@@ -6,9 +6,9 @@ import axios from 'axios';
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState('');  // Error message
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=e01fee2fc9f220d8bb4f8dbf56e8d8fc`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=e01fee2fc9f220d8bb4f8dbf56e8d8fc`  // API URL
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
@@ -42,7 +42,7 @@ function App() {
             <p>{data.name}</p>
           </div>
           <div className="temp">
-            {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
+            {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}  // Display temperature in Celsius
           </div>
           <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
